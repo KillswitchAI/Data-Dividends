@@ -1,17 +1,8 @@
-**What is this?**  
-
-Right now, AI companies make billions training on your data—posts, videos, health info—and pay you $0. This project builds the infrastructure to change that.
-
-**How it works (simple version):**
-1. You opt in to share specific data (always your choice)
-2. AI calculates what it's worth based on scarcity + utility
-3. You get paid automatically—transparent, auditable, fair
-4. Think "Spotify royalties for your digital labor"
-
-**Why this matters:**
-The skydiving blood pressure example isn't hypothetical. Rare, valuable data should earn premium rates. Common data should still earn something. Right now? You earn nothing.
-
-**Want to help?**
-- [Join the waitlist](#) ← Get early access
-- [Build the calculator](#calculator-spec) ← Developers start here  
-- [Share this repo](#) ← Spread the word
+The Problem: AI companies train on your data (posts, videos, health info). They make billions. You get $0.
+The Solution: Pay people fairly for their data—automatically, transparently, based on value.
+How It Works:
+	1.	You choose what to share (always opt-in)
+	2.	AI calculates value (rare data = more money)
+	3.	You get paid (transparent, auditable)
+	4.	Example: Morning scroll = $0.05. Skydiving blood pressure = $500.
+This is the infrastructure to make that real.
