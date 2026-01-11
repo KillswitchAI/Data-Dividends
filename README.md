@@ -1,4 +1,4 @@
-Data Dividends Calculator
+Data Dividends Calculator 
 Open blueprint: how much is your data actually worth?
 You own your weight.
 You own your wage.
