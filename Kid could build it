@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>What's My Data Worth?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    .step { display: none; }
+    .step.active { display: block; }
+    input[type="range"] { width: 100%; }
+    button {
+      background: #10b981;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .result { font-size: 48px; font-weight: bold; color: #10b981; }
+  </style>
+</head>
+<body>
+  <h1>You Own Your Weight. You Own Your Wage.</h1>
+  <p>Find out what your data is worth in 60 seconds.</p>
+
+  <!-- Step 1 -->
+  <div class="step active" id="step1">
+    <h2>What kind of data do you create?</h2>
+    <label><input type="checkbox" value="newsletter"> Newsletter/Blog</label><br>
+    <label><input type="checkbox" value="video"> Video/Podcast</label><br>
+    <label><input type="checkbox" value="health"> Health/Fitness</label><br>
+    <label><input type="checkbox" value="specialized"> Specialized/Niche</label><br>
+    <button onclick="nextStep(1)">Next →</button>
+  </div>
+
+  <!-- Step 2 -->
+  <div class="step" id="step2">
+    <h2>How unique is your data?</h2>
+    <input type="range" id="scarcity" min="0" max="100" value="50">
+    <p>Common ← → One-of-a-kind</p>
+    <button onclick="nextStep(2)">Next →</button>
+  </div>
+
+  <!-- Step 3 -->
+  <div class="step" id="step3">
+    <h2>How often do you create this data?</h2>
+    <label><input type="radio" name="freq" value="daily"> Daily</label><br>
+    <label><input type="radio" name="freq" value="weekly"> Weekly</label><br>
+    <label><input type="radio" name="freq" value="monthly"> Monthly</label><br>
+    <button onclick="calculate()">Calculate My Worth →</button>
+  </div>
+
+  <!-- Results -->
+  <div class="step" id="results">
+    <h1>YOUR DATA IS WORTH:</h1>
+    <div class="result" id="worth"></div>
+    <p id="breakdown"></p>
+    <button onclick="location.reload()">Calculate Again</button>
+  </div>
+
+  <script>
+    function nextStep(current) {
+      document.getElementById('step' + current).classList.remove('active');
+      document.getElementById('step' + (current + 1)).classList.add('active');
+    }
+
+    function calculate() {
+      const baseValues = { newsletter: 8, video: 12, health: 12, specialized: 20 };
+      const types = Array.from(document.querySelectorAll('#step1 input:checked')).map(el => el.value);
+      const scarcity = document.getElementById('scarcity').value;
+      const freq = document.querySelector('input[name="freq"]:checked').value;
+
+      const base = types.reduce((sum, type) => sum + (baseValues[type] || 0), 0);
+      const scarcityMult = scarcity <= 30 ? 1 + scarcity/30 : scarcity <= 70 ? 2 + (scarcity-30)/40*3 : 5 + (scarcity-70)/30*5;
+      const freqMult = { daily: 30, weekly: 4, monthly: 1 }[freq];
+
+      const worth = Math.round(base * scarcityMult * freqMult);
+
+      document.getElementById('step3').classList.remove('active');
+      document.getElementById('results').classList.add('active');
+      document.getElementById('worth').innerText = '$' + worth + '/month';
+      document.getElementById('breakdown').innerHTML = `
+        Base: $${base} × Scarcity: ${scarcityMult.toFixed(1)}x × Frequency: ${freqMult}x
+      `;
+    }
+  </script>
+</body>
+</html>
