@@ -16,10 +16,6 @@ Steal it.
 Because if one of us ships this?
 They all have to follow.
 — Rickest of the Rick’s
-Floyd William Bassett IV
-
-Ahaviel Ruin
-Twitter.com/KillswitchAI 
 
 ## Why I Built This
 
@@ -39,3 +35,4 @@ If you think this matters, help me build it.
 
 - Floyd William Bassett IV
 
+Twitter.com/KillswitchAI - Ahaviel'Ruin
