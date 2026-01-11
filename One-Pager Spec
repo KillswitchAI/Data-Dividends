@@ -1,0 +1,39 @@
+# Data Worth Calculator — Dev Spec
+
+## Tech Stack
+- Frontend: React 18 + Tailwind CSS
+- Backend: Firebase (Firestore for waitlist, Functions for calculations)
+- Hosting: Vercel
+- Analytics: Plausible (privacy-first)
+
+## Pages
+1. Landing (hero + CTA)
+2. Calculator (3-step form)
+3. Results (dynamic based on inputs)
+4. Waitlist confirmation
+
+## Data Model
+{
+  userId: string (generated),
+  dataTypes: array,
+  scarcitySlider: number (0-100),
+  frequency: string,
+  calculatedWorth: number,
+  timestamp: datetime,
+  email: string (if joined waitlist)
+}
+
+## Key Functions
+- calculateWorth(inputs) → returns { monthlyWorth, breakdown }
+- saveToWaitlist(email, userType) → stores in Firestore
+- generateShareLink(worth) → returns Twitter intent URL
+
+## Design Assets Needed
+- Logo (SVG)
+- Background gradient (CSS or image)
+- Icons for checkmarks, arrows
+
+## Timeline
+- Days 1-2: Build + deploy
+- Day 3: Test with 10 users
+- Day 4: Launch publicly
