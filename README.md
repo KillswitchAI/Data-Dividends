@@ -33,6 +33,15 @@ This project builds the system that should already exist.
 
 If you think this matters, help me build it.
 
-- Floyd William Bassett IV
+HOW IT EATS THEM ALIVE
+One lab starts paying.
+Creators pull their best stuff from free scrapes.
+Free models get junk data.
+Quality crashes.
+Users leave.
+Revenue dies.
+The pirates chase the drop.
+They either start paying…
+or the whole thing devours itself.
+— Rick
 
-Twitter.com/KillswitchAI - Ahaviel'Ruin
